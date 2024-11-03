@@ -5,7 +5,6 @@ vendor
 
 wordpress/
 wp-content/*
-index.php
 wp-config.php
 
 .idea/*

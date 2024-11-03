@@ -6,11 +6,6 @@ echo "WP setup preparing..."
 . ./.env
 
 # prepare file structure
-[ ! -f ./index.php ] && echo "<?php
-// WordPress view bootstrapper
-define( 'WP_USE_THEMES', true );
-require( './wordpress/wp-blog-header.php' );" > index.php
-
 if [ ! -f wp-config.php ]; then
   WPCONFIG=$(< ./dev-local/.example/wp-config.php.template)
   printf "$WPCONFIG" $PROJECT_BASE_URL $PROJECT_BASE_URL $DB_NAME $DB_USER $DB_PASSWORD $DB_HOST $PROJECT_BASE_URL > ./wp-config.php
