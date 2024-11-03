@@ -1,0 +1,26 @@
+vendor
+.env
+.sql
+.zip
+
+wordpress/
+wp-content/*
+index.php
+wp-config.php
+
+.idea/*
+
+# logs
+dev-local/nginx/*
+!dev-local/nginx/ssl/
+dev-local/php-fpm/error.log
+
+!wp-content/mu-plugins
+wp-content/mu-plugins/*
+!wp-content/mu-plugins/wc-github.php
+
+!wp-content/themes/
+wp-content/themes/*
+!wp-content/themes/cate-theme/
+!wp-content/themes/index.php
+

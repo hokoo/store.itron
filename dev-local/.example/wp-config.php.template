@@ -1,0 +1,31 @@
+<?php
+const WP_SITEURL = '%s';
+const WP_HOME    = '%s';
+
+const DB_NAME = '%s';
+const DB_USER = '%s';
+const DB_PASSWORD = '%s';
+const DB_HOST = '%s';
+const DB_CHARSET = 'utf8';
+const DB_COLLATE = '';
+$table_prefix = 'wp_';
+
+const WP_ENVIRONMENT_TYPE = '{{ wp_environment_type }}';
+const WP_DEBUG = false;
+
+const ITRON_GITHUB_API_TOKEN = '{{ github_token }}';
+
+const ITRON_ROOT = __DIR__ . '/';
+
+function site_is_ssl() {
+	return ! empty( $_SERVER['HTTPS'] ) && $_SERVER['HTTPS'] !== 'off';
+}
+
+$host = (isset($_SERVER['HTTP_HOST'])) ? $_SERVER['HTTP_HOST']: '%s';
+define( 'WP_CONTENT_URL', ( site_is_ssl() ? 'https' : 'http' ) . '://' . $host . '/wp-content' );
+const WP_CONTENT_DIR = ITRON_ROOT . 'wp-content/';
+if ( ! defined('ABSPATH') ) {
+	define( 'ABSPATH', ITRON_ROOT . 'wordpress/' );
+}
+
+require_once ABSPATH . 'wp-settings.php';
