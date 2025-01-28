@@ -26,7 +26,7 @@ add_action(
 		}
 
 		// Get the billing_website order meta
-		$billing_website = $order->get_meta( 'billing_website' );
+		$billing_website = trim( $order->get_meta( 'billing_website' ), ' /' );
 
 		// Get order email
 		$order_email = $order->get_billing_email();
